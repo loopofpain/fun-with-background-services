@@ -1,7 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace WindowsService.Test
+namespace TheWindowsService.Test2
 {
     public class Program
     {
@@ -12,12 +16,9 @@ namespace WindowsService.Test
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            // .UseWindowsService(options => {
-            //     options.ServiceName = ".Net Test Service";
-            // })
-            .ConfigureServices((hostContext, services) =>
-            {
-                services.AddHostedService<Worker>();
-            });
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddHostedService<Worker>();
+                });
     }
 }
