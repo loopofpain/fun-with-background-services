@@ -18,7 +18,8 @@ namespace TheWindowsService.Test2
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddHostedService<Worker>();
+                    services.Configure<ExampleWorkerOptions>(hostContext.Configuration.GetSection("ExampleWorkerOptions"));
+                    services.AddHostedService<ExampleWorker>();
                 });
     }
 }
