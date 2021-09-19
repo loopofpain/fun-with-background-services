@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
 
@@ -10,20 +11,22 @@ namespace TheWindowsService.Test2.Csv
     {
         private string pathToCurrentCsvFileName;
 
-        public void InitializeNewFile()
+        public async Task InitializeNewFileAsync()
         {
             if (!Directory.Exists("export-csv"))
             {
                 Directory.CreateDirectory("export-csv");
             }
 
-            this.pathToCurrentCsvFileName = $"export-csv//{DateTime.UtcNow.ToString("o")}-export-batch.csv";
+            this.pathToCurrentCsvFileName = $"export-csv//{DateTime.Now.ToString("s")}-export-batch.csv";
         
             using (var writer = new StreamWriter(this.pathToCurrentCsvFileName,false))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
                 csv.Context.RegisterClassMap<CsvEntryMap>();
                 csv.WriteHeader<CsvEntry>();
+
+                await writer.WriteAsync(csv.Configuration.NewLine);
             }
         }
 
@@ -32,7 +35,7 @@ namespace TheWindowsService.Test2.Csv
             this.pathToCurrentCsvFileName = null;
         }
 
-        public void AppendRecordAsync(CsvEntry entries)
+        public async Task AppendRecordAsync(CsvEntry entries)
         {
             // Append to the file.
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
@@ -46,6 +49,8 @@ namespace TheWindowsService.Test2.Csv
             {
                 csv.Context.RegisterClassMap<CsvEntryMap>();
                 csv.WriteRecord(entries);
+                
+                await writer.WriteAsync(csv.Configuration.NewLine);
             }
         }
     }

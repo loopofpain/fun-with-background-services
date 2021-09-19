@@ -73,11 +73,11 @@ namespace TheWindowsService.Test2
                     entries.Add(new CsvEntry());
                 }
 
-                this.customCsvWriter.InitializeNewFile();
+                await this.customCsvWriter.InitializeNewFileAsync();
 
                 for (int i = 0; i < entries.Count(); i++)
                 {
-                    this.customCsvWriter.AppendRecordAsync(entries[i]);
+                    await this.customCsvWriter.AppendRecordAsync(entries[i]);
                 }
 
                 this.customCsvWriter.FinalizeFile();
