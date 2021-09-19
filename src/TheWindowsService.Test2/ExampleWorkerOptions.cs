@@ -4,6 +4,8 @@ namespace TheWindowsService.Test2
     {
         public long IntervalInSeconds { get; set; }
 
-        public bool ExecuteTaskOnStartup {get;set;}
+        public bool ExecuteTaskOnStartup { get; set; }
+
+        public TimedStart TimedStart {get;set;}
     }
 }
