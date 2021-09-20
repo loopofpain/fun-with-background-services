@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace TheWindowsService.Test2.AuthenticationHandler
+namespace TestService.AuthenticationHandler
 {
     public static class HttpExtensions
     {

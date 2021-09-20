@@ -1,4 +1,4 @@
-namespace TheWindowsService.Test2
+namespace TestService
 {
     public class TimedStart
     {

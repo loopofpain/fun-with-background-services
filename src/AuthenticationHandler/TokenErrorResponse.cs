@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace TheWindowsService.Test2.AuthenticationHandler
+namespace TestService.AuthenticationHandler
 {
     public class TokenErrorResponse
     {

@@ -1,7 +1,7 @@
 using System;
 using CsvHelper.Configuration;
 
-namespace TheWindowsService.Test2.Csv {
+namespace TestService.Csv {
     public class CsvEntryMap:ClassMap<CsvEntry> {
         public CsvEntryMap()
         {

@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "WindowsService.Test": {
+    "TestService": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "environmentVariables": {

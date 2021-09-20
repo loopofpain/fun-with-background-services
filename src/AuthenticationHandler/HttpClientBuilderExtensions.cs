@@ -3,7 +3,7 @@ using System.Net.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace TheWindowsService.Test2.AuthenticationHandler
+namespace TestService.AuthenticationHandler
 {
     public static class HttpClientBuilderExtensions
     {

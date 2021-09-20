@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WindowsService.Test
+namespace TestService
 {
     public class Worker : BackgroundService
     {

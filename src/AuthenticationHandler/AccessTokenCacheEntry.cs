@@ -1,6 +1,6 @@
 using System;
 
-namespace TheWindowsService.Test2.AuthenticationHandler
+namespace TestService.AuthenticationHandler
 {
     public class AccessTokenCacheEntry
     {

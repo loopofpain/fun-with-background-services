@@ -9,7 +9,7 @@ using System.Net.Http.Json;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace TheWindowsService.Test2.AuthenticationHandler
+namespace TestService.AuthenticationHandler
 {
     public class AuthenticationDelegatingHandler : DelegatingHandler
     {

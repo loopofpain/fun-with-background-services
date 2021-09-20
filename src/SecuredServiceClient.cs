@@ -1,7 +1,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace TheWindowsService.Test2
+namespace TestService
 {
     public class ApiServiceClient
     {

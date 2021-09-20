@@ -1,6 +1,6 @@
 using System;
 
-namespace TheWindowsService.Test2.Csv {
+namespace TestService.Csv {
     public class CsvEntry {
 
         public CsvEntry()

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
 
-namespace TheWindowsService.Test2.Csv
+namespace TestService.Csv
 {
     public class CustomCsvWriter
     {
@@ -13,12 +13,12 @@ namespace TheWindowsService.Test2.Csv
 
         public async Task InitializeNewFileAsync()
         {
-            if (!Directory.Exists("export-csv"))
+            if (!Directory.Exists("export"))
             {
-                Directory.CreateDirectory("export-csv");
+                Directory.CreateDirectory("export");
             }
 
-            this.pathToCurrentCsvFileName = $"export-csv//{DateTime.Now.ToString("s")}-export-batch.csv";
+            this.pathToCurrentCsvFileName = $"export//{DateTime.Now.ToString("s")}-export-batch.csv";
         
             using (var writer = new StreamWriter(this.pathToCurrentCsvFileName,false))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
