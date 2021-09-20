@@ -1,1 +1,1 @@
-dotnet publish -o Release
+dotnet publish -o ../release/v1.0.0
